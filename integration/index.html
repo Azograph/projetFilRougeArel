@@ -14,9 +14,9 @@
 <body>
     <header> 
         <div> 
-        <nav aria-label="navigation principale"> 
-        <!-- <div> <a href=""><img src="" alt="logo AREL"/></a></div>
-            <div>  -->
+        <nav class="navHaut" aria-label="navigation principale"> 
+        <div> <a href=""><img src="" alt="logo AREL"/></a></div>
+            <div>
                 <ul id="navigationP">
                     <li> <a href="#"> Accueil </a></li>
                     <li> <a href="#"> Inscription </a></li>
@@ -27,19 +27,21 @@
         </nav>
         </div>
     </header>
+    
     <main> 
-        <section> 
-            <div>
+        
+        <section class="container"> 
+            <div class="card intro">
                 <h1> L’AREL vous attend !</h1>
                 <h3> Une association d’études des langues à côté de chez vous !</h3>
                 <p> Vous avez un projet de voyage, de la famille à l’étranger, le goût des langues étrangères, vous souhaitez apprendre ou perfectionner vos acquis….rejoignez l’AREL  !</p>
             </div>
-            <div>
-                <img src=""/>
+            <div class="card">
+                <img class="imgGroupeAccueil" src="src/img/groupeAccueil.svg" alt="imageS"/>
             </div>
         </section>
 
-        <section> 
+        <section class="container"> 
             <ul class="langues">
                 <li> Anglais </li>
                 <li> Espagnol </li>
@@ -49,8 +51,8 @@
             </ul>
         </section>
 
-        <section>
-            <div> 
+        <section class="container">
+            <div class="card"> 
                 <h2> Des cours adaptés à votre rythme </h2>
                 <p> Des cours encadrés par des professeurs qualifiés, adaptés à tous les niveaux, pour apprendre ou perfectionner une langue en toute confiance.</p>
                 <ul class="infoPratique">
@@ -63,7 +65,7 @@
                 </ul>
             </div>
 
-            <div>
+            <div class="card">
                 <img src="" alt="carte"/> <!-- Future carte intéractive -->
                 <img src="" alt="picto localisation"/>
                 <p> 
@@ -75,7 +77,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="container">
             <div> 
                 <h4> Prêt à tenter l’aventure ? </h4>
                 <h2> Inscrivez-vous ! </h2>
@@ -86,7 +88,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="container">
             <div>
                 <h2> Ils ont cru en nous ! </h2>
                 <p> Retrouvez les témoignages d’ancients adhérent de l’AREL </p>
@@ -97,7 +99,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="container">
             <div>
                 <h2> Notre équipe </h2>
                 <p> Enseignant.e.s et personnel de l’association, ils sont là pour vous.</p>
@@ -112,7 +114,7 @@
             </div>
         </section>
 
-        <section> 
+        <section class="container"> 
             <div>
                 <h2> Des associations qui font vivre le territoire </h2>
                 <p> Parce que l’apprentissage passe aussi par la rencontre, découvrez des initiatives locales qui, comme nous, favorisent les échanges et l’ouverture. </p>
