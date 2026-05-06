@@ -9,53 +9,64 @@ main {
   margin: auto;
 }
 
-
-
 section {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
 }
 
+/* CONTAINER */
 .container {
   display: flex;
   justify-content: center;
+  margin: auto;
 }
 
+.container-bInscription {
+  background-color: #071D51;
+}
+
+/* CARD */
 .card {
   align-items: center;
   align-content: center;
   max-width: 60vh;
   min-width: 60vh;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin: auto;
 }
 
-.intro {
+.card-carte {
+  background-color: white;
+  padding: 5vh;
+  border-radius: 10px;
+}
+
+.card-bInscription {
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.card-intro {
   max-width: 60vh;
 }
 
+
+/* IMAGES */
+
 .imgGroupeAccueil {
   width: 100%;
-
 }
+
+
+/* AUTRE */
 .langues {
   display: flex;
 }
 
-.langues li {
-  align-content: center;
-  text-align: center;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;;
-  background-color: #071D51;
-  color: #F4F7FB;
-  height: 100px;
-  width: 100px;;
-}
 
 /* NAVIGATION & LIENS, LISTES */ 
-
 a {
     color: #EB7950;
 }
@@ -102,6 +113,18 @@ ul {
 
 #navigationP li {
   display: inline;
+}
+
+.langues li {
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;;
+  background-color: #071D51;
+  color: #F4F7FB;
+  height: 100px;
+  width: 100px;;
 }
 
 
