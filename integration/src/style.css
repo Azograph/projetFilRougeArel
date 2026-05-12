@@ -1,7 +1,17 @@
+/* VARIABLES */ 
+
+:root {
+  --colorPrimary: #071D51;     // var(--colorPrimary);
+  --colorSecondary : #EB7950;  // var(--colorSecondary);
+  --colorLight : #f2f4f8;      // var(--colorLight);
+}
+
+/* GENERAL */ 
+
 body {
     font-family: "Montserrat", sans-serif;
-    color: #071D51;
-    background-color: #F4F7FB;
+    color: var(--colorPrimary);
+    background-color: var(--colorLight);
     margin:20px;
 }
 
@@ -14,6 +24,11 @@ section {
   margin-top: 10vh;
 }
 
+h3 {
+    color: var(--colorSecondary);
+}
+
+
 /* CONTAINER */
 .container {
   display: flex;
@@ -21,8 +36,8 @@ section {
   margin: auto;
 }
 
-.container-bInscription {
-  background-color: #071D51;
+.container-inscription {
+  background-color: var(--colorPrimary);
 }
 
 /* CARD */
@@ -40,7 +55,7 @@ section {
   border-radius: 10px;
 }
 
-.card-bInscription {
+.card-inscription {
   justify-content: center;
   text-align: center;
   color: white;
@@ -55,7 +70,7 @@ section {
 
 /* IMAGES */
 
-.imgGroupeAccueil {
+.img-groupe-accueil {
   width: 100%;
 }
 
@@ -68,11 +83,11 @@ section {
 
 /* NAVIGATION & LIENS, LISTES */ 
 a {
-    color: #EB7950;
+    color: var(--colorSecondary);
 }
 
 a:visited {
-    color: #EB7950;
+    color: var(--colorSecondary);
 }
 
 ul {
@@ -80,7 +95,7 @@ ul {
     padding: 0;
 }
 
-.navHaut {
+.nav-haut {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,15 +105,15 @@ ul {
   box-shadow: rgba(51, 47, 66, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.1) 0px 30px 60px -30px;
 }
 
-#navigationP {
+#navigation-p {
   text-align: right;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-#navigationP li a {
-  color:  #071D51;;
+#navigation-p li a {
+  color:  var(--colorPrimary);
   font-weight: 500;
   line-height: 5em ;
   text-align: center ;
@@ -107,11 +122,11 @@ ul {
   margin-left: 2em;
 }
 
-#navigationP li a:hover {
-    color: #EB7950;
+#navigation-p li a:hover {
+    color: var(--colorSecondary);
 }
 
-#navigationP li {
+#navigation-p li {
   display: inline;
 }
 
@@ -121,18 +136,13 @@ ul {
   padding: 20px;
   margin: 10px;
   border-radius: 10px;;
-  background-color: #071D51;
-  color: #F4F7FB;
+  background-color: var(--colorPrimary);
+  color: var(--colorLight);
   height: 100px;
   width: 100px;;
 }
 
 
-/* TITRES */ 
-
-h3 {
-    color: #EB7950;
-}
 
 /* FORMULAIRE */ 
 
@@ -160,4 +170,16 @@ textarea {
   margin-top: 5px;
   padding-left: 10px;
   padding-top: 10px;
+}
+
+/* RESPONSIVE */ 
+
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .langues {
+    align-items: center;
+  }
 }
