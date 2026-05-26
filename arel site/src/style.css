@@ -16,7 +16,6 @@ body {
 }
 
 h1 {
-    text-align: center;
     margin-top: 4vh;
     margin-bottom: 4vh;
 }
@@ -187,6 +186,9 @@ header {
 }
 
 #temoignages {
+    h2, h3 {
+        text-align: center;
+        }
     .containerGrid {
         margin-top: 1vh;
         margin-bottom: 1vh;
@@ -202,6 +204,7 @@ header {
             color: var(--color-bleu-clair);
             font-weight: 500;
         }
+        
     }
 }
 
