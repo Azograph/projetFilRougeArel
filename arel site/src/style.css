@@ -1,4 +1,4 @@
-/* /// VARIABLES \\\ */
+/* /--- VARIABLES ---\ */
 :root {
     --color-clair: #F4F7FB;         /* var(--color-clair);  */
     --color-fonce:  #071D51;        /* var(--color-fonce);  */
@@ -6,13 +6,103 @@
     --color-bleu-clair: #6E6DBF;    /* var(--color-bleu-clair); */  
 }
 
-/* /// GENERAL \\\ */
-
+/* /--- GENERAL ---\ */
 body {
     background-color: #ededf7;
     margin: auto;
+    font-family: "Montserrat", sans-serif;
+    color : var(--color-fonce);
+    margin: 0px;
 }
 
+h1 {
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+h2 {
+    padding-bottom: 1vh;
+}
+
+a {
+    font-family: "Open Sans", sans-serif;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--color-fonce);
+}
+
+input, textarea {
+    background-color: var(--color-clair);
+}
+
+button {
+    background-color: var(--color-accent);
+    padding: 2vh 3vh 2vh 3vh;
+    border: none;
+    border-radius: 1vh;
+    color: var(--color-fonce);
+    font-weight: 600;
+    font-size:medium;
+}
+
+button:hover {
+    background-color: var(--color-clair);
+}
+
+section {
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+}
+
+
+/* --- CARD --- */
+.card {
+    padding: 2vh;
+    margin: 1vh;
+}
+
+.cardMap {
+    background-color: var(--color-clair);
+    border-radius: 1vh;
+    img {
+        width: 100%;
+    }
+}
+
+.cardShadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* /--- CONTAINER FLEX ---\ */
+.containerFlex {
+    display: flex;
+    margin: auto;
+    max-width: 70%
+}
+
+.containerColumnF {
+    flex-direction: column;
+}
+
+.containerCenter {
+    justify-content: center;
+}
+
+/* /--- CONTAINER GRID ---\ */
+.containerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    max-width: 70%;
+}
+
+/* /--- SECTIONS ---\ */
 header {
     background-color: var(--color-clair);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -23,6 +113,7 @@ header {
         justify-content: space-between;
         max-width: 90%;
         margin-top: 5vh;
+        padding: 2vh;
     }
     nav {
         a {
@@ -47,206 +138,27 @@ header {
     }
 }
 
-
-
-h1 {
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    color : var(--color-fonce);
-}
-
-h2 {
-    padding-bottom: 1vh;
-}
-
-h2, h3, h4 {
-    font-family: "Montserrat", sans-serif;
-    margin: 0px;
-    color : var(--color-fonce);
-}
-
-p, ul, ol, label, textarea {
-    color: var(--color-fonce);
-    font-family: "Montserrat", sans-serif;
-}
-
-a {
-    
-    font-family: "Open Sans", sans-serif;
-    color: var(--color-accent);
-    font-weight: 600;
-}
-
-a:hover {
-    color :var(--color-fonce);
-}
-
-input, textarea {
-    background-color:var(--color-clair);
-}
-
-button {
-    background-color: var(--color-accent);
-    padding: 2vh 3vh 2vh 3vh;
-    border: none;
-    border-radius: 1vh;
-    color: var(--color-fonce);
-    font-weight: 600;
-    font-size:medium;
-}
-
-button:hover {
-    background-color: var(--color-clair);
-}
-
-section {
-    margin-top: 7vh;
-    margin-bottom: 7vh;
-}
-
-input, textarea {
-    border: none;
-    border-radius: 0.5vh;
-    padding: 0.5vh;
-}
-
-form {
-    ul {
-        list-style: none;
-        padding-left: 2vh;
-    }
-    li {
-        margin-bottom: 0.5vh;
-    }
-    input, textarea {
-        margin-bottom: 1vh;
-        margin-right: 2vh;
-    }
-    fieldset {
-        border-radius: 1vh;
-    }
-    button {
-        background-color: var(--color-accent);
-    }
-}
-
 #introduction {
+    img {
+        width: 100%;
+    }
     h3 {
         color : var(--color-accent);
-    }
-}
-
-
-footer {
-    background-color:var(--color-fonce);
-    margin-top: 4vh;
-    .containerGrid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 70%;
-        margin: auto;
-        justify-items: center;
-    }
-    h4, li  {
-        color: var(--color-clair);
-    }
-}
-
-/* CARD */
-.card {
-    padding: 2vh;
-    margin: 1vh;
-}
-
-.cardExemple {
-    background-color:var(--color-clair);
-    border-radius: 1vh;
-    padding: 2vh;
-    h3 {
-        margin-top: 1vh;
-    }
-    img {
-        margin-top: 1vh;
-    }
-}
-
-.cardCode {
-    background-color: var(--color-fonce);
-    border-radius: 1vh;
-    padding: 1vh;
-    p {color:var(--color-clair);
-    margin: 0;
-    }
-}
-
-.cardMap {
-    background-color: var(--color-clair);
-    border-radius: 1vh;
-    img {
-        width: 100%;
-    }
-}
-
-.cardShadow {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-/* CONTAINER FLEX */
-.containerFlex {
-    display: flex;
-    margin: auto;
-    max-width: 70%
-}
-
-.containerColumnF {
-    flex-direction: column;
-}
-
-.containerNav {
-    justify-content: space-between;
-    align-items: center;
-    padding: 2vh;
-    max-width: 91vh;
-}
-
-.containerCenter {
-    justify-content: center;
-}
-
-
-
-
-
-/* CONTAINER GRID */
-.containerGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    max-width: 70%;
-}
-
-/* SECTION */
-
-#introduction {
-    img {
-        width: 100%;
     }
 }
 
 #langues {
     .containerFlex {
         justify-content: center;
+
     }
     .card {
         border: 1px solid var(--color-fonce);
         border-radius: 1vh;
-        padding-top: 6vh;
-        padding-bottom: 6vh;
-        width: 10vh;
+        min-height: 130px;
+        min-width: 130px;
         text-align: center;
+        align-content: center;
         h3 {
             color: var(--color-fonce);
         }
@@ -276,7 +188,6 @@ footer {
 
 #temoignages {
     .containerGrid {
-        margin: auto;
         margin-top: 1vh;
         margin-bottom: 1vh;
         max-width: 700px;
@@ -296,11 +207,9 @@ footer {
 
 #equipe {
     .containerGrid {
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: center;
-        align-items: center;
+        margin-left: 0;
         .card {
-            max-width: 300px;
+            flex: 0 0 calc((100% - 40px) / 6);
             text-align: center;
             background-color: var(--color-clair);
             border-radius: 1vh;
@@ -317,7 +226,6 @@ footer {
 
 #associations {
         .containerGrid {
-        margin: auto;
         margin : 1vh;
         grid-template-columns: 3fr 3fr;
         background-color: var(--color-clair);
@@ -326,20 +234,58 @@ footer {
             padding: 1vh;
             img {
                 text-align: center;
-                width: 100%;
+                max-width: 100%;
             }
         }
         p {
             color: var(--color-bleu-clair);
             font-weight: 500;
         }
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+form {
+    ul {
+        list-style: none;
+        padding-left: 2vh;
+    }
+    li {
+        margin-bottom: 0.5vh;
+    }
+    input, textarea {
+        border: none;
+        margin-bottom: 1vh;
+        margin-right: 2vh;
+    }
+    fieldset {
+        border-radius: 1vh;
+    }
+    button {
+        background-color: var(--color-accent);
+    }
+}
+
+footer {
+    background-color:var(--color-fonce);
+    margin-top: 4vh;
+    .containerGrid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 70%;
+        margin: auto;
+        justify-items: center;
+    }
+    h4, li  {
+        color: var(--color-clair);
     }
 }
 
 
 
 
-/* /// RESPONSIVE \\\ */
+/* /--- RESPONSIVE ---\ */
 @media (max-width: 768px) {
 
 }
@@ -366,7 +312,7 @@ footer {
     }
 }
 
-/* /// ANIMATION \\\ */
+/* /--- ANIMATION ---\ */
 .float {
     display: inline-block;
     vertical-align: middle;
@@ -377,4 +323,65 @@ footer {
 .float:hover {
     -webkit-transform: translateY(-8px);
     transform: translateY(-8px);
+}
+
+
+/* /--- FONCTIONNALITÉ CARROUSEL ÉQUIPE ---\ */ 
+.carousel {
+    overflow: hidden;
+}
+
+/* La rangée de cards qui se déplace horizontalement */
+    .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    }
+
+.controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.controls button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dot.active {
+    background: #1a2b4a;
+}
+
+#btnPrev {
+    text-align: center;
 }
