@@ -1,15 +1,15 @@
+        // -------- CARROUSEL --------
     // --- Récupération des éléments HTML ---
-    const track   = document.getElementById('track');
-    const btnPrev = document.getElementById('btnPrev');
-    const btnNext = document.getElementById('btnNext');
-    const dotsZone = document.getElementById('dots');
+const track   = document.getElementById('track');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const dotsZone = document.getElementById('dots');
 
     // --- Variables d'état ---
-    let pageActuelle = 0;
-    const cardsParPage = 3; // nombre de cards visibles à la fois
-    const totalCards = track.children.length;
-    const totalPages = Math.ceil(totalCards / cardsParPage); // Math.ceil permet d'arrondir toujours au suppérieur > pour afficher les card.
-
+let pageActuelle = 0;
+const cardsParPage = 3; // nombre de cards visibles à la fois
+const totalCards = track.children.length;
+const totalPages = Math.ceil(totalCards / cardsParPage); // Math.ceil permet d'arrondir toujours au suppérieur > pour afficher les card.
 
     // --- Création des dots (un par page) ---
 for (let i = 0; i < totalPages; i++) {
@@ -19,8 +19,7 @@ for (let i = 0; i < totalPages; i++) {
     dotsZone.appendChild(dot);
 }
 
-
-// --- Fonction principale : aller à une page donnée ---
+    // --- Fonction principale : aller à une page donnée ---
 function allerPage(numero) {
     pageActuelle = numero;
 
@@ -42,11 +41,21 @@ function allerPage(numero) {
     });
 }
 
-
     // --- Écouteurs sur les boutons ---
-    btnPrev.addEventListener('click', () => allerPage(pageActuelle - 1));
-    btnNext.addEventListener('click', () => allerPage(pageActuelle + 1));
-
+btnPrev.addEventListener('click', () => allerPage(pageActuelle - 1));
+btnNext.addEventListener('click', () => allerPage(pageActuelle + 1));
 
     // --- Initialisation ---
-    allerPage(0);
+allerPage(0);
+
+
+        // -------- MAP INTERACTIVE --------
+
+var map = L.map('map').setView([45.89409637451172, 3.1103131771087646], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 30,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var marker = L.marker([45.89409637451172, 3.1103131771087646]).addTo(map);

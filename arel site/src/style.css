@@ -67,9 +67,11 @@ section {
 .cardMap {
     background-color: var(--color-clair);
     border-radius: 1vh;
-    img {
-        width: 100%;
-    }
+}
+
+#map {
+    height: 300px;
+    width: 100%;
 }
 
 .cardShadow {
@@ -80,7 +82,7 @@ section {
 .containerFlex {
     display: flex;
     margin: auto;
-    max-width: 70%
+    max-width: 60%
 }
 
 .containerColumnF {
@@ -98,7 +100,7 @@ section {
     margin: auto;
     margin-top: 3vh;
     margin-bottom: 3vh;
-    max-width: 70%;
+    max-width: 60%;
 }
 
 /* /--- SECTIONS ---\ */
@@ -171,17 +173,20 @@ header {
 }
 
 #inscription {
-    background-color: #071D51;
     padding-top: 0.5vh;
     padding-bottom: 0.5vh;
     .containerFlex {
         justify-content: space-around;
         align-items: center;
+        background-color: #CACBF6;
+        border-radius: 1vh;
     }
     h3, h2 {
-        color: var(--color-accent);
+        color: var(--color-fonce);
         text-align: center;
-        padding: 1vh;
+    }
+    h2 {
+        font-size: 1.9em;
     }
 }
 
@@ -192,13 +197,13 @@ header {
     .containerGrid {
         margin-top: 1vh;
         margin-bottom: 1vh;
-        max-width: 700px;
         grid-template-columns: 1fr 3fr;
         background-color: var(--color-clair);
         border-radius: 1vh;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-        .img {
+        img {
             text-align: center;
+            width: 100%;
         }
         p {
             color: var(--color-bleu-clair);
@@ -284,9 +289,6 @@ footer {
         color: var(--color-clair);
     }
 }
-
-
-
 
 /* /--- RESPONSIVE ---\ */
 @media (max-width: 768px) {
