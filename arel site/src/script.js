@@ -59,3 +59,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker = L.marker([45.89409637451172, 3.1103131771087646]).addTo(map);
+
+
+        // -------- MENU BURGER --------
+
+
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("ouvert");
+}
+
+const btnBurger = document.getElementById("btnBurger");
+btnBurger.addEventListener('click', toggleMenu);

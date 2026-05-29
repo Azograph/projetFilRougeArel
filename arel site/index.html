@@ -16,6 +16,8 @@
     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+    <!-- fontawesome  -->
+    <script defer src="https://kit.fontawesome.com/296ed7e101.js" crossorigin="anonymous"></script>
     <!-- Mon script -->
     <script defer src="src/script.js"></script>
 
@@ -25,16 +27,34 @@
 <body>
 
     <header>
-        <div class="containerFlex containerNav">
-            <div><img aria-label="logo" src="src/img/logo.png"/></div>
-            <nav aria-label="navigation principal">
-                <ul>
-                    <li> <a href="index.html"> Accueil </a></li>
-                    <li> <a href="src/pages/inscription.html"> Inscription </a></li>
-                    <li> <a href="src/pages/nousRecrutons.html"> Nous recrutons ! </a></li>
-                    <li> <a href="src/pages/contact.html"> Contact </a></li>
-                </ul>
-            </nav>
+        <div id="desktop">
+            <div class="containerFlex containerNav">
+                <div><img aria-label="logo" src="src/img/logo.png"/></div>
+                <nav aria-label="navigation principal">
+                    <ul>
+                        <li> <a  class="actif" href="index.html"> Accueil </a></li>
+                        <li> <a href="src/pages/inscription.html"> Inscription </a></li>
+                        <li> <a href="src/pages/nousRecrutons.html"> Nous recrutons ! </a></li>
+                        <li> <a href="src/pages/contact.html"> Contact </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="phone">
+            <div class="containerFlex containerNav">
+                <button><a href="#"><i class="fa-solid fa-house fa-2xl"></i></a></button>
+                <div><img aria-label="logo" src="src/img/logo.png"/></div>
+                <button><a href="#"><i id="btnBurger" class="fa-solid fa-bars fa-2xl"></i></a></button>
+                <nav class="menuBurger" id="menu" aria-label="navigation principal">
+                    <ul>
+                        <li> <a class="actif" href="index.html"> Accueil </a></li>
+                        <li> <a href="src/pages/inscription.html"> Inscription </a></li>
+                        <li> <a href="src/pages/nousRecrutons.html"> Nous recrutons ! </a></li>
+                        <li> <a href="src/pages/contact.html"> Contact </a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -57,16 +77,16 @@
                 <div class="card">
                     <h3> Anglais </h3>
                 </div>
-                <div class="card cardLangues"> 
+                <div class="card"> 
                     <h3>Espagnol </h3>
                 </div>
-                <div class="card cardLangues">
+                <div class="card">
                     <h3> Italien </h3>
                 </div>
-                <div class="card cardLangues">
+                <div class="card">
                     <h3> Portugais</h3>
                 </div>
-                <div class="card cardLangues">
+                <div class="card">
                     <h3> Allemand </h3>
                 </div>               
             </div>
@@ -159,7 +179,7 @@
                     <h3> Enseignant.e.s et personnel de l’association, ils sont là pour vous.</h3>
                 </div>
 
-                    <div class="containerGrid carrousel">
+                    <div class="containerGrid carousel">
                         <div class="carousel-track" id="track">
 
                             <div class="card cardShadow"> 
@@ -217,7 +237,7 @@
         </section>
 
         <section id="associations">
-            <div class="containerFlex">
+            <div class="containerFlex titre">
                 <div class="card">
                     <h2> Ils ont cru en nous ! </h2>
                     <h3> Retrouvez les témoignages d’ancients adhérent de l’AREL </h3>
@@ -253,37 +273,42 @@
     </main>
 
     <footer>
-        <div class="containerGrid containerFooter">
-            <div class="card cardGrid">
-                <nav aria-label="navigation sources">
-                    <h4> Nos réseaux </h4>
-                    <ul>
-                        <li> <a href="#"> Facebook </a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="card cardGrid">
-                <nav aria-label="navigation réseaux">
-                    <h4> Contact </h4>
-                    <ul>
-                        <li> Maison des associations </br>
-                            Place de la Fédération </br>
-                            Riom</li>
-                        <li> 07 83 70 77 94 </li>
-                        <li>arel63200@gmail.com</li>
-                    </ul>
-                </nav>
+
+        <div class="containerFlex">
+            <div class="card">
+                <h3>Réseaux</h3>
+                <a href="#" class="cardFacebook"><i class="fa-brands fa-facebook icone"></i>
+                Facebook
+                </a>
             </div>
 
-            <div class="card cardGrid">
-                <nav aria-label="navigation réseaux">
-                    <h4> Nos réseaux :</h4>
-                    <ul>
-                        <li> <a href="#"> Status de l'association  </a></li>
-                        <li> <a href="#"> Réglement intérieur </a></li>
-                        <li><a href="#"> Mention légales </li>
-                    </ul>
-                </nav>
+            <div class="card">
+                <h3>Contact</h3>
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>Maison des Associations<br>Place de la Fédération<br>RIOM</span>
+                </div>
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-phone"></i></span>
+                    <span>07 83 70 77 94</span>
+                </div>
+
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-envelope"></i></span>
+                    <span>arel63200@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Status de l'association</a></li>
+                    <li><a href="#">Règlement intérieur</a></li>
+                    <li><a href="#">Mention légal</a></li>
+                </ul>
             </div>
         </div>
     </footer>
