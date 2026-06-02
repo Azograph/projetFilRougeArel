@@ -212,7 +212,6 @@ header {
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.05em;
-    transition: background 0.2s;
     min-width: 44px;
     .texte {
         writing-mode: vertical-rl;
@@ -298,10 +297,11 @@ header {
         grid-template-columns: 1fr 3fr;
         background-color: var(--color-clair);
         border-radius: 1vh;
+        align-items: center;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         img {
             text-align: center;
-            min-width: 100%;
+            min-width: 80%;
         }
         p {
             color: var(--color-bleu-clair);
@@ -620,6 +620,16 @@ footer {
             }
         }
     }
+
+    #temoignages {
+        .containerGrid {
+            grid-template-columns: repeat(1, 1fr);
+            img {
+            max-width: 100px;
+            }
+        }
+
+        }
 
     #inscription {
         h2 {
