@@ -3,33 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Guide du HTML CSS">
-
-    <link rel="stylesheet" href="./css/style.css"/>
+    <meta name="description" content=" Site AREL">
+    <link rel="stylesheet" href="./src/style.css"/>
+    <!-- Goolge fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <!-- fontawesome  -->
+    <script defer src="https://kit.fontawesome.com/296ed7e101.js" crossorigin="anonymous"></script>
+    <!-- Mon script -->
+    <script defer src="src/script.js"></script>
 
-    <title>Le guide HTML/CSS pour Débutants</title>
+    <title>AREL </title>
 
 </head>
+
 <body>
 
     <header>
-        <div class="containerFlex containerNav">
-            <div><img aria-label="logo" src="images/logo.png"/></div>
-            <nav aria-label="navigation principal">
-                <ul>
-                    <li> <a href="#"> Accueil </a></li>
-                    <li> <a href="#"> Inscription </a></li>
-                    <li> <a href="#"> Nous recrutons ! </a></li>
-                    <li> <a href="#"> Contact </a></li>
-                </ul>
-            </nav>
+        <div id="desktop">
+            <div class="containerFlex containerNav">
+                <div><img aria-label="logo" src="src/img/logo.png"/></div>
+                <nav aria-label="navigation principal">
+                    <ul>
+                        <li> <a  class="actif" href="index.html"> Accueil </a></li>
+                        <li> <a href="src/pages/inscription.html"> Inscription </a></li>
+                        <li> <a href="src/pages/nousRecrutons.html"> Nous recrutons ! </a></li>
+                        <li> <a href="src/pages/contact.html"> Contact </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="phone">
+            <div class="containerFlex containerNav">
+                <button><a href="#"><i class="fa-solid fa-house fa-2xl"></i></a></button>
+                <div><img aria-label="logo" src="src/img/logo.png"/></div>
+                <button><a href="#"><i id="btnBurger" class="fa-solid fa-bars fa-2xl"></i></a></button>
+                <nav class="menuBurger" id="menu" aria-label="navigation principal">
+                    <ul>
+                        <li> <a class="actif" href="index.html"> Accueil </a></li>
+                        <li> <a href="src/pages/inscription.html"> Inscription </a></li>
+                        <li> <a href="src/pages/nousRecrutons.html"> Nous recrutons ! </a></li>
+                        <li> <a href="src/pages/contact.html"> Contact </a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
     <main>
+        <div id="encart">
+            <div id="panneau">
+                <div class="panneauContenu">
+                    <h3>Les dates de la prochaine session</h3>
+                    <p>Présence au forum des associations le dimanche 6 septembre 2026.</p>
+                    <p>Puis permanences d'inscription à la Maison des associations :<br>
+                    lundi 7 et mercredi 9 septembre de 17h à 19h,<br>
+                    et samedi 12 septembre de 9h à 12h.
+                    </p>
+                    <p class="lien">Début des cours le lundi 28 septembre 2026</p>
+                </div>
+            </div>
+            <button id="boutonEncart" onclick="toggleEncart()">
+                <span class="croix">✕</span>
+                <span class="texte">Actualité</span>
+            </button>
+        </div>
+
         <section id="introduction">
             <div class="containerGrid">
                 <div class="card cardGrid">
@@ -38,7 +86,7 @@
                     <p> Vous avez un projet de voyage, de la famille à l’étranger, le goût des langues étrangères, vous souhaitez apprendre ou perfectionner vos acquis….rejoignez l’AREL  !</p>
                 </div>
                 <div class="card cardGrid">
-                    <img aria-label="groue Accueil" src="images/groupeAccueil.png"/>
+                    <img aria-label="groue Accueil" src="src/img/groupeAccueil.png"/>
                 </div>
             </div>
         </section>
@@ -48,17 +96,17 @@
                 <div class="card">
                     <h3> Anglais </h3>
                 </div>
-                <div class="card cardLangues"> 
+                <div class="card"> 
                     <h3>Espagnol </h3>
                 </div>
-                <div class="card cardLangues">
+                <div class="card">
                     <h3> Italien </h3>
                 </div>
-                <div class="card cardLangues">
+                <div class="card">
                     <h3> Portugais</h3>
                 </div>
-                <div class="card cardLangues">
-                    <h3> Allemend </h3>
+                <div class="card">
+                    <h3> Allemand </h3>
                 </div>               
             </div>
         </section>
@@ -78,7 +126,7 @@
                     </ul>
                 </div>
                 <div class="card cardGrid cardMap cardShadow">
-                    <img src="images/map.png" alt="carte"/> <!-- Future carte intéractive -->
+                    <div id="map"> </div>
                     <p> 
                         Maison des Associations<br/> 
                         Place de la Fédération<br/>
@@ -111,31 +159,24 @@
 
                     <div class="containerGrid">
                         <div class="card"> 
-                            <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
+                            <div class="img"><img aria-label="photo profil" src="src/img/photoProfil1.png"/></div>
                         </div>
                         <div class="card">
-                            <h4>Emma</h4>
-                            <p> Superbe expérience, professeurs à l'écoute et supers sympas.</p>
+                            <h4>Danielle</h4>
+                            <p>Dans notre quotidien, certaines initiatives méritent d'être mises en lumière. C'est le cas de cette formidable association l'AREL, qui propose des cours de langues accessibles à tous : anglais, allemend, espagnol, italien, portuguais... autant de portes ouvertes vers d'autres cultures, d'autres horizons. </br> 
+                            Au-delà de l'apprentissage linguistique, c'est un véritable lieu de partage et de convivialité. On y vient pour progresser bien sûr, mais aussi pour échanger, rencontrer et s'enrichir humainement. </br>
+                            Des enseignants, passionnés et bienveillants, savent transmettre bien plus que des mots : ils donnent le goût de communiquer et de comprendre l'autre.</p>
                         </div>
-                    </div>
-
-                    <div class="containerGrid">
-                            <div class="card"> 
-                                <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
-                            </div>
-                            <div class="card">
-                                <h4>Emma</h4>
-                                <p> Superbe expérience, professeurs à l'écoute et supers sympas.</p>
-                            </div>
                     </div>
 
                     <div class="containerGrid">
                         <div class="card"> 
-                            <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
+                            <div class="img"><img aria-label="photo profil" src="src/img/phProFran.png"/></div>
                         </div>
                         <div class="card">
-                            <h4>Emma</h4>
-                            <p> Superbe expérience, professeurs à l'écoute et supers sympas.</p>
+                            <h4>Françoise</h4>
+                            <p>Je pratique depuis deux ans les cours d'italien proposés par l'AREL. J'en suis tout à fait satisfaite. En effet, les cours sont conviviaux, en petits groupe, ce qui favorisent l'émulation, les prises de paroles. De plus, notre sympatique formatrice, Simona, d'origine Italienne, propose une pédagogie vivante et variée, mêlant des sujets divers avec des apports grammaticaux et lexicaux. </br>
+                            N'hésitez pas à venir nous rejoindre ! </p>
                         </div>
                     </div>
 
@@ -150,45 +191,84 @@
                     <h3> Enseignant.e.s et personnel de l’association, ils sont là pour vous.</h3>
                 </div>
 
-                    <div class="containerGrid">
+                    <div class="containerGrid carousel">
+                        <div class="carousel-track" id="track">
 
-                        <div class="card cardShadow">
-                            <div class="card"> 
-                                <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
-                            </div>
-                            <div class="card">
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProFredGum.png"/></div>
                                 <h4>Frédérique Gumery</h4>
-                                <p> Présidente</p>
+                                <p>Présidente</p>
                             </div>
-                        </div>
 
-                        <div class="card cardShadow">
-                            <div class="card"> 
-                                <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProMarTheVa.png"/></div>
+                                <h4>Marie-Thérèse Vathere</h4>
+                                <p>Trésorière </p>
                             </div>
-                            <div class="card">
-                                <h4>Frédérique Gumery</h4>
-                                <p> Présidente</p>
-                            </div>
-                        </div>
 
-                        <div class="card cardShadow">
-                            <div class="card"> 
-                                <div class="img"><img aria-label="photo profil" src="images/photoProfil1.png"/></div>
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProBriAub.png"/></div>
+                                <h4>Brigitte </br> Aubert</h4>
+                                <p>Secrétaire adjointe</p>
                             </div>
-                            <div class="card">
-                                <h4>Frédérique Gumery</h4>
-                                <p> Présidente</p>
-                            </div>
-                        </div>
 
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProAnnMaTin.png"/></div>
+                                <h4>Anne-Marie Tinturier</h4>
+                                <p>Secrétaire</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProZachMi.png"/></div>
+                                <h4>Zach Mitlas</h4>
+                                <p> Professeur d'anglais</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProGilFin.png"/></div>
+                                <h4>Gillian Finch</h4>
+                                <p> Professeur d'anglais</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProOliOnar.png"/></div>
+                                <h4>Olivier Fernandez</h4>
+                                <p> Professeur d'espagnol</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProSimoOnar.png"/></div>
+                                <h4>Simona Onarati</h4>
+                                <p> Professeur d'italien</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProFranLec.png"/></div>
+                                <h4>Franziska Leclerc</h4>
+                                <p> Professeur d'allemand</p>
+                            </div>
+
+                            <div class="card cardShadow"> 
+                                <div class="img"><img aria-label="photo profil" src="src/img/phProSofGei.png"/></div>
+                                <h4>Sofia Geirinhas</h4>
+                                <p> Profeseur de Portuguais</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="btnPrev">←</button>
+                        <div class="dots" id="dots"></div>
+                        <button id="btnNext">→</button>
                     </div>
 
             </div>
         </section>
 
         <section id="associations">
-            <div class="containerFlex">
+            <div class="containerFlex titre">
                 <div class="card">
                     <h2> Ils ont cru en nous ! </h2>
                     <h3> Retrouvez les témoignages d’ancients adhérent de l’AREL </h3>
@@ -199,62 +279,66 @@
 
                     <div class="containerGrid cardShadow">
                         <div class="card"> 
-                            <div><img aria-label="commite de jumelage riom" src="images/comminteJumelage.jpg"/></div>
+                            <div><img aria-label="commite de jumelage riom" src="src/img/comminteJumelage.jpg"/></div>
                         </div>
                         <div class="card">
                             <h4>Le comité de Jumelage</h4>
                             <p> Le Comité de Jumelage s’implique activement dans diverses évènements, aussi bien à Riom que dans ses villes partenaires jumelées. Qu’il s’agisse de rendez-vous locaux ou de célébrations internationales — il œuvre à renforcer le dialogue interculturel. »</p>
-                            <a href="https://comitejumelage-riom-paysgentiane.fr/">Le site de l'association</a>
+                            <a href="https://comitejumelage-riom-paysgentiane.fr/">Découvrir l'association</a>
                         </div>
                     </div>
 
                     <div class="containerGrid cardShadow">
                         <div class="card"> 
-                            <div><img aria-label="commite de jumelage riom" src="images/comminteJumelage.jpg"/></div>
+                            <div><img aria-label="commite de jumelage riom" src="src/img/aesus.jpg"/></div>
                         </div>
                         <div class="card">
-                            <h4>Le comité de Jumelage</h4>
-                            <p> Le Comité de Jumelage s’implique activement dans diverses évènements, aussi bien à Riom que dans ses villes partenaires jumelées. Qu’il s’agisse de rendez-vous locaux ou de célébrations internationales — il œuvre à renforcer le dialogue interculturel. »</p>
-                            <a href="https://comitejumelage-riom-paysgentiane.fr/">Le site de l'association</a>
+                            <h4>AESUS - Artisanat</h4>
+                            <p> AESUS est né en 2023, à Riom (63), de la passion et de la vision commune de deux salariés de Michelin, d'une assistante sociale et d'artisans locaux. Ce tiers lieu unique rassemble des artisans et des espaces de vie, créant un environnement dynamique et collaboratif.</p>
+                            <a href="https://www.aesus-tiers-lieu.com/">Découvrir l'association</a>
                         </div>
                     </div>
             </div>
         </section>
-
     </main>
 
     <footer>
-        <div class="containerGrid containerFooter">
-            <div class="card cardGrid">
-                <nav aria-label="navigation sources">
-                    <h4> Nos réseaux </h4>
-                    <ul>
-                        <li> <a href="#"> Facebook </a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="card cardGrid">
-                <nav aria-label="navigation réseaux">
-                    <h4> Contact </h4>
-                    <ul>
-                        <li> Maison des associations </br>
-                             Place de la Fédération </br>
-                            Riom</li>
-                        <li> 07 83 70 77 94 </li>
-                        <li>arel63200@gmail.com</li>
-                    </ul>
-                </nav>
+
+        <div class="containerFlex">
+            <div class="card">
+                <h3>Réseaux</h3>
+                <a href="#" class="cardFacebook"><i class="fa-brands fa-facebook icone"></i>
+                Facebook
+                </a>
             </div>
 
-            <div class="card cardGrid">
-                <nav aria-label="navigation réseaux">
-                    <h4> Nos réseaux :</h4>
-                    <ul>
-                        <li> <a href="#"> Status de l'association  </a></li>
-                        <li> <a href="#"> Réglement intérieur </a></li>
-                        <li><a href="#"> Mention légales </li>
-                    </ul>
-                </nav>
+            <div class="card">
+                <h3>Contact</h3>
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>Maison des Associations<br>Place de la Fédération<br>RIOM</span>
+                </div>
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-phone"></i></span>
+                    <span>07 83 70 77 94</span>
+                </div>
+
+
+                <div class="card cardContact">
+                    <span class="icone"><i class="fa-solid fa-envelope"></i></span>
+                    <span>arel63200@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Status de l'association</a></li>
+                    <li><a href="#">Règlement intérieur</a></li>
+                    <li><a href="#">Mention légal</a></li>
+                </ul>
             </div>
         </div>
     </footer>
