@@ -61,13 +61,6 @@ button:hover {
     background-color: var(--color-clair);
 }
 
-section {
-    margin-top: 7vh;
-    margin-bottom: 7vh;
-}
-
-
-
 /* --- CARD --- */
 .card {
     padding: 2vh;
@@ -145,6 +138,7 @@ header {
     }
 }
 
+/* Menu burger */
 #phone {
     display: none;
 }
@@ -155,7 +149,88 @@ header {
 
 .ouvert {
     display: block;
+    font-size: 1.2em;
 }
+/* Menu burger fin  */
+
+/* Encart actualité */
+#encart {
+    position: fixed;  /* toujours visible, même si on scrolle */
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;    /* passe par-dessus tout le reste */
+    display: flex;
+    align-items: stretch;
+}
+
+#panneau {
+    max-width: 0;           /* fermé = largeur 0 */
+    overflow: hidden;       /* cache le contenu quand fermé */
+    transition: max-width 0.35s ease;  /* animation fluide */
+    background: var(--color-clair);
+    border: 2px solid var(--color-accent);
+    border-right: none;     /* le bouton est à droite, pas de double bordure */
+    border-radius: 12px 0 0 12px;
+}
+
+#panneau.ouvert {
+    max-width: 380px;
+}
+
+.panneauContenu {
+    width: 330px;
+    padding: 1.25rem 1.5rem;
+    h3 {
+      color: var(--color-accent);
+      margin: 0 0 0.75rem;
+      font-size: 1.2rem;
+    }
+    p {
+      color: var(--color-fonce);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 0.5rem;
+    }
+    .lien {
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+}
+
+#boutonEncart {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 0.6rem;
+    border-radius: 0 8px 8px 0; /* arrondi seulement à droite */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+    min-width: 44px;
+    .texte {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg); 
+    }
+    .croix {
+      font-size: 1.1rem;
+      display: none;
+    }
+}
+
+#encart.ouvert #boutonEncart .croix {
+      display: block; /* visible quand ouvert */
+}
+
+
+
+/* Encart actualité fin */
 
 #introduction {
     margin-top: 0;
@@ -232,7 +307,6 @@ header {
             color: var(--color-bleu-clair);
             font-weight: 500;
         }
-        
     }
 }
 
@@ -308,8 +382,6 @@ form {
     }
 }
 
-
-
 footer {
     background-color:var(--color-fonce);
     margin-top: 4vh;
@@ -376,7 +448,7 @@ footer {
     overflow: hidden;
 }
 
-/* La rangée de cards qui se déplace horizontalement */
+        /* La rangée de cards qui se déplace horizontalement */
 .carousel-track {
     display: flex;
     gap: 20px;
@@ -434,27 +506,40 @@ footer {
 
 /* /--- RESPONSIVE ---\ */
 
-/* Extra small (< 576px) */
-@media (max-width: 576px) {
-    header {
+
+/*  Small (576px) & Medium (768px) */
+@media (max-width: 768px) {
+      header {
             background-color:  #ededf7;
             box-shadow: none;
             width: 100%;
     }
+
     h1 {
         margin-top: 3vh;
         margin-bottom: 2vh;
     }
+
+    #panneau.ouvert {
+    max-width: 300px;
+    }
+
+    .panneauContenu {
+    width: 270px;
+    padding: 1.25rem 1.5rem; 
+    }
+
     #desktop {
         display: none;
     }
 
     #phone {
         display: block;
+        position: relative;
         .containerFlex {
             margin: 0;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
         }
         button {
@@ -470,24 +555,26 @@ footer {
         }
     }
 
+    #menu {
+        position: absolute;    /* ← flotte, ne pousse rien */
+        top: 100%;                /* juste en dessous de la navbar */
+        right: 0;                 /* aligné à droite */
+        background: var(--color-clair);
+        padding: 0.5rem 0;
+        border: 1px solid var(--color-bleu-clair);
+    }
+
     section {
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
+
     .card {
         padding: 2vh;
         margin: 0.5vh;
     }
-    #introduction {
-            .containerGrid {
-                margin-top: 0;
-            }
-            .card {
-                margin-top: 0;
-                padding: 1vh;
-            }
-    }
-      .containerNav {
+
+    .containerNav {
         flex-direction: column;
         text-align: center;
         li {
@@ -509,6 +596,16 @@ footer {
         max-width: 90%;
     }
 
+    #introduction {
+        .containerGrid {
+            margin-top: 0;
+        }
+        .card {
+            margin-top: 0;
+            padding: 1vh;
+        }
+    }
+
     #langues {
     .card {
         border: 1px solid var(--color-fonce);
@@ -518,10 +615,23 @@ footer {
         padding: 0.3vh;;
         text-align: center;
         align-content: center;
-        h3 {
-            color: var(--color-fonce);
+            h3 {
+                color: var(--color-fonce);
+            }
         }
     }
+
+    #inscription {
+        h2 {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .card {
+            padding-bottom: 0;
+        }
+        button {
+            margin-bottom: 4vh;;
+        }
     }
 
     #associations {
@@ -543,29 +653,46 @@ footer {
             padding: 0.5vh;
         }
     }
-
 }
 
+/* Large (992px) */
+@media (max-width: 992px) {
+    .containerGrid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 80%;
+    }
 
-/* Small (≥ 576px) */
-@media (min-width: 576px) {
-    body {
-    background-color: yellow;
-  }
-}
+    #langues {
+        .containerFlex {
+            max-width: 100%;
+            margin: auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+        }
+        .card {
+            border: 1px solid var(--color-fonce);
+            border-radius: 1vh;
+            min-height: 50px;
+            min-width: 60%;
+            padding: 0.3vh;;
+            text-align: center;
+            align-content: center;
+            h3 {
+                color: var(--color-fonce);
+            }
+        }
+    }
 
-/* Medium (≥ 768px) */
-@media (min-width: 768px) {
-    body {
-    background-color: rgb(224, 150, 150);
-  }
-}
+    #associations {
+        .containerGrid {
+            grid-template-columns: none;
+        }
+    }
 
-/* Large (≥ 992px) */
-@media (min-width: 992px) {
-    body {
-    background-color: rgb(183, 172, 233);
-  }
+    .carousel-track {
+        gap: 5px; 
+    }
 }
 
 /* Extra large (≥ 1200px) */

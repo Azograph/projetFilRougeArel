@@ -5,7 +5,7 @@ const btnPrev = document.getElementById('btnPrev');
 const btnNext = document.getElementById('btnNext');
 const dotsZone = document.getElementById('dots');
 
-    // --- Variables d'état ---
+    // --- Variables ---
 let pageActuelle = 0;
 const cardsParPage = 3; // nombre de cards visibles à la fois
 const totalCards = track.children.length;
@@ -63,8 +63,6 @@ var marker = L.marker([45.89409637451172, 3.1103131771087646]).addTo(map);
 
         // -------- MENU BURGER --------
 
-
-
 function toggleMenu() {
   const menu = document.getElementById("menu");
   menu.classList.toggle("ouvert");
@@ -72,3 +70,10 @@ function toggleMenu() {
 
 const btnBurger = document.getElementById("btnBurger");
 btnBurger.addEventListener('click', toggleMenu);
+
+        // -------- ENCART ACTUALITÉ --------
+
+function toggleEncart() {
+    document.getElementById("encart").classList.toggle("ouvert");
+    document.getElementById("panneau").classList.toggle("ouvert");
+}
