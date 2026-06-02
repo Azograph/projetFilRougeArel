@@ -1,9 +1,10 @@
 /* /--- VARIABLES ---\ */
 :root {
-    --color-clair: #F4F7FB;         /* var(--color-clair);  */
-    --color-fonce:  #071D51;        /* var(--color-fonce);  */
-    --color-accent: #e66536;        /* var(--color-accent); */   
-    --color-bleu-clair: #6E6DBF;    /* var(--color-bleu-clair); */  
+    --color-clair: #F4F7FB;         
+    --color-fonce:  #071D51;        
+    --color-accent: #e66536;        
+    --color-bleu-clair: #6E6DBF;     
+    --color-bleu-blanc: #CACBF6;
 }
 
 /* /--- GENERAL ---\ */
@@ -227,8 +228,6 @@ header {
       display: block; /* visible quand ouvert */
 }
 
-
-
 /* Encart actualité fin */
 
 #introduction {
@@ -275,7 +274,7 @@ header {
     .containerFlex {
         justify-content: space-around;
         align-items: center;
-        background-color: #CACBF6;
+        background-color: var(--color-bleu-blanc);
         border-radius: 1vh;
     }
     h3, h2 {

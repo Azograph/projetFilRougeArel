@@ -1,4 +1,4 @@
-        // -------- CARROUSEL --------
+        // /--- CARROUSEL ---\
     // --- Récupération des éléments HTML ---
 const track   = document.getElementById('track');
 const btnPrev = document.getElementById('btnPrev');
@@ -7,7 +7,7 @@ const dotsZone = document.getElementById('dots');
 
     // --- Variables ---
 let pageActuelle = 0;
-const cardsParPage = 3; // nombre de cards visibles à la fois
+const cardsParPage = 3; // nombre de cards visibles 
 const totalCards = track.children.length;
 const totalPages = Math.ceil(totalCards / cardsParPage); // Math.ceil permet d'arrondir toujours au suppérieur > pour afficher les card.
 
@@ -29,14 +29,15 @@ function allerPage(numero) {
     const gap = 20;
     const deplacement = pageActuelle * cardsParPage * (largeurCard + gap);
 
+    // Déplace l’élément track horizontalement vers la gauche du nombre de pixels contenu dans deplacement
     track.style.transform = `translateX(-${deplacement}px)`;
 
     // Met à jour les boutons
     btnPrev.disabled = (pageActuelle === 0);
     btnNext.disabled = (pageActuelle === totalPages - 1);
 
-    // Met à jour les dots
-    document.querySelectorAll('.dot').forEach((dot, index) => {
+    // Met à jour les dots, ajoute la classe active pour activer ou désactiver les dots
+    document.querySelectorAll('.dot').forEach((dot, index) => { // forEach = for(let i = 0; i < dots.length; i++)
     dot.classList.toggle('active', index === pageActuelle);
     });
 }
@@ -49,7 +50,7 @@ btnNext.addEventListener('click', () => allerPage(pageActuelle + 1));
 allerPage(0);
 
 
-        // -------- MAP INTERACTIVE --------
+        // /--- MAP INTERACTIVE ---\
 
 var map = L.map('map').setView([45.89409637451172, 3.1103131771087646], 13);
 
@@ -61,7 +62,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([45.89409637451172, 3.1103131771087646]).addTo(map);
 
 
-        // -------- MENU BURGER --------
+        // /--- MENU BURGER ---\
 
 function toggleMenu() {
   const menu = document.getElementById("menu");
