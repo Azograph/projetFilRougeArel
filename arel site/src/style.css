@@ -8,6 +8,11 @@
 }
 
 /* /--- GENERAL ---\ */
+:focus-visible {
+  outline: 3px solid #f35106;
+  outline-offset: 2px;
+}
+
 body {
     background-color: #ededf7;
     margin: auto;
